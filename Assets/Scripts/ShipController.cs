@@ -44,7 +44,7 @@ public class ShipController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update2 () {
+    void boatRocking() {
 
         //transform.Rotate(new Vector3(Mathf.PingPong((Time.time * speed), 0.0625f) - 0.03125f, 0, 0));
 
@@ -58,7 +58,7 @@ public class ShipController : MonoBehaviour {
         movement.x = Mathf.Clamp(movement.x, -move_clamp.x, move_clamp.x);
         movement.y = Mathf.Clamp(movement.y, -move_clamp.y, move_clamp.y);
         movement.z = Mathf.Clamp(movement.z, -move_clamp.z, move_clamp.z);
-        //transform.position = movement;
+        transform.position = movement;
 
         //rotation
         float rotx = rotate_wave_amp.x * Mathf.Sin((Mathf.PerlinNoise(Time.time, 4) * rotate_speed.x));
